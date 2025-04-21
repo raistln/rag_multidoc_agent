@@ -619,6 +619,21 @@ files = [
 python-dotenv = "*"
 
 [[package]]
+name = "eval-type-backport"
+version = "0.2.2"
+description = "Like `typing._eval_type`, but lets older Python versions use newer typing features."
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "eval_type_backport-0.2.2-py3-none-any.whl", hash = "sha256:cb6ad7c393517f476f96d456d0412ea80f0a8cf96f6892834cd9340149111b0a"},
+    {file = "eval_type_backport-0.2.2.tar.gz", hash = "sha256:f0576b4cf01ebb5bd358d02314d31846af5e07678387486e2c798af0e7d849c1"},
+]
+
+[package.extras]
+tests = ["pytest"]
+
+[[package]]
 name = "executing"
 version = "2.2.0"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -1685,6 +1700,22 @@ langchain = ">=0.1.7"
 llama-index-core = ">=0.12.0,<0.13.0"
 
 [[package]]
+name = "llama-index-llms-mistralai"
+version = "0.4.0"
+description = "llama-index llms mistral ai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+groups = ["main"]
+files = [
+    {file = "llama_index_llms_mistralai-0.4.0-py3-none-any.whl", hash = "sha256:2839018db233ce8b7ee13c925a53fa01489badacfe1ddfff27d919f5193f8569"},
+    {file = "llama_index_llms_mistralai-0.4.0.tar.gz", hash = "sha256:13e81b23d96af668ca697f17c268d2e9de8d399419879223a7060fd1ac0da9ca"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+mistralai = ">=1.0.0"
+
+[[package]]
 name = "llama-index-llms-openai"
 version = "0.3.35"
 description = "llama-index llms openai integration"
@@ -1908,6 +1939,28 @@ files = [
 
 [package.dependencies]
 traitlets = "*"
+
+[[package]]
+name = "mistralai"
+version = "1.6.0"
+description = "Python Client SDK for the Mistral AI API."
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "mistralai-1.6.0-py3-none-any.whl", hash = "sha256:6a4f4d6b5c9fff361741aa5513cd2917a81be520deeb0d33e963d1c31eae8c19"},
+    {file = "mistralai-1.6.0.tar.gz", hash = "sha256:0616b55b694871f0a7d1a4283a53cb904089de7fbfcac1d2c0470d1c77ef879d"},
+]
+
+[package.dependencies]
+eval-type-backport = ">=0.2.0"
+httpx = ">=0.28.1"
+pydantic = ">=2.10.3"
+python-dateutil = ">=2.8.2"
+typing-inspection = ">=0.4.0"
+
+[package.extras]
+gcp = ["google-auth (>=2.27.0)", "requests (>=2.32.3)"]
 
 [[package]]
 name = "mpmath"
@@ -4576,4 +4629,4 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<4.0"
-content-hash = "ffac0cfee92f162ef584e885cafc3c80b0b3616667622dcdaec64be6a22d6268"
+content-hash = "02ba6fa7cc3b52cb2b6976ead5ad813f11d1a884d5a2b06013047e00f695de95"

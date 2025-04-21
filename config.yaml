@@ -1,0 +1,21 @@
+model:
+  llm:
+    provider: "mistralai"
+    model: "mistral-small-latest"
+  embedding:
+    provider: "huggingface"
+    model: "sentence-transformers/all-mpnet-base-v2"
+
+processing:
+  chunk_size: 1024
+  chunk_overlap: 20
+
+paths:
+  documents: "documents"
+  embeddings: "data/embeddings"
+  cache: "data/cache"
+
+query_engine:
+  response_mode: "tree_summarize"
+  use_async: true
+  verbose: true 
